@@ -403,7 +403,7 @@ html[data-theme="morning"] #vignette,html[data-theme="vintage"] #vignette{
   <p class="sub">Make an enchanted garden letter for someone special. They will receive the animated blooming garden.</p>
   <div class="presets" id="presetRow" aria-label="Romantic presets"></div>
   <div class="fgrid">
-    <div class="field"><label>To <span data-count="to"></span></label><input id="fTo" maxlength="24" placeholder="My Love"></div>
+    <div class="field"><label>To <span data-count="to"></span></label><input id="fTo" maxlength="24" placeholder="My beloved Lal Banu🫀"></div>
     <div class="field"><label>From <span data-count="from"></span></label><input id="fFrom" maxlength="24" placeholder="Alessio"></div>
     <div class="field full"><label>Occasion <span data-count="occasion"></span></label><input id="fOccasion" maxlength="40" placeholder="just because"></div>
     <div class="field full"><label>Message — use | for new line <span data-count="msg"></span></label><textarea id="fMsg" rows="3" maxlength="140" placeholder="I couldn't give you flowers|that last forever,|so I grew you a meadow|that never wilts."></textarea></div>
@@ -458,7 +458,7 @@ function clean(v, fallback, max){
   return v.replace(/[<>&"']/g,"").trim() || fallback;
 }
 const PARAMS = {
-  to: clean(qs.get("to"), "My Love", 24),
+  to: clean(qs.get("to"), "My beloved Lal Banu🫀", 24),
   from: clean(qs.get("from"), "Alessio", 24),
   occasion: clean(qs.get("occasion"), "just because", 40).toLowerCase(),
   msg: clean(qs.get("msg"), "I couldn't give you flowers|that last forever,|so I grew you a meadow|that never wilts.", 140),
@@ -1540,7 +1540,7 @@ function renderStyles(){
 
 function buildLink(){
   const u = new URL(location.href.split("?")[0]);
-  u.searchParams.set("to", $("fTo").value || "My Love");
+  u.searchParams.set("to", $("fTo").value || "My beloved Lal Banu🫀");
   u.searchParams.set("from", $("fFrom").value || "Alessio");
   u.searchParams.set("occasion", $("fOccasion").value || "just because");
   u.searchParams.set("msg", $("fMsg").value || "I grew a meadow for you");
@@ -1557,14 +1557,14 @@ $("copyBtn").onclick = async () => {
 };
 $("waBtn").onclick = () => {
   const url = buildLink();
-  const txt = `🌸 I grew a blooming meadow for you, ${$("fTo").value || "my love"}.\nIt only blooms when you open it.\n${url}`;
+  const txt = `🌸 I grew a blooming meadow for you Lal Banu🫀, ${$("fTo").value || "my beloved Lal Banu🫀"}.\nIt only blooms when you open it.\n${url}`;
   open("https://wa.me/?text=" + encodeURIComponent(txt), "_blank");
 };
 $("shareBtn").onclick = async () => {
   const url = buildLink();
   if(navigator.share){
     try {
-      await navigator.share({title:"A blooming living meadow for you 🌸", text:"Someone grew a blooming meadow of flowers for you.", url});
+      await navigator.share({title:"A blooming living meadow for you Lal Banu🫀🌸", text:"Zihad grew a blooming meadow of flowers for you Lal Banu🫀.", url});
     } catch(e){}
   } else { $("copyBtn").onclick(); }
 };
